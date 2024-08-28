@@ -5,7 +5,7 @@ variable "vm_count" {
 
 variable "zone" {
   description = "GCP zone for VM'er"
-  default     = "europe-west4-a"  # Ændr dette til din ønskede zone
+  default     = "europe-west4-a"  
 }
 
 resource "google_compute_instance" "workshop_vm" {
@@ -33,7 +33,7 @@ guest_accelerator {
   network_interface {
     network    = google_compute_network.vpc_network.self_link
     subnetwork = google_compute_subnetwork.subnet.self_link
-    access_config {nat_ip = google_compute_address.static_ip.address}  # Tildel en ekstern IP-adresse
+    access_config {nat_ip = google_compute_address.static_ip.address}  
   }
 
   service_account {
