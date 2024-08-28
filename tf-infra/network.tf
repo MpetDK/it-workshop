@@ -26,7 +26,7 @@ resource "google_compute_address" "static_ip" {
 # Allow http
 resource "google_compute_firewall" "allow-http" {
   name    = "allow-http-ws"
-  network = google_compute_network.vpc_network.self_link  # Korrekt reference
+  network = google_compute_network.vpc_network.self_link  
   allow {
     protocol = "tcp"
     ports    = ["80"]
@@ -38,7 +38,7 @@ resource "google_compute_firewall" "allow-http" {
 
 resource "google_compute_firewall" "allow_ssh" {
   name    = "allow-ssh-ws"
-  network = google_compute_network.vpc_network.self_link  # Korrekt reference
+  network = google_compute_network.vpc_network.self_link 
 
   allow {
     protocol = "tcp"
@@ -50,7 +50,7 @@ resource "google_compute_firewall" "allow_ssh" {
 
 resource "google_compute_firewall" "allow_rdp" {
   name    = "allow-rdp-ws"
-  network = google_compute_network.vpc_network.self_link  # Korrekt reference
+  network = google_compute_network.vpc_network.self_link  
 
   allow {
     protocol = "tcp"
